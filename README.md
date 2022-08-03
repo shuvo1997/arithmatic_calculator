@@ -2,6 +2,9 @@
 
 A simple calculator project.
 
+## Project Demo
+![demo-img][img/img1.png]
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
