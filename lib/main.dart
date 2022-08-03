@@ -39,7 +39,49 @@ class CalculatorHomePage extends StatefulWidget {
 }
 
 class _CalculatorHomePageState extends State<CalculatorHomePage> {
-  var sum = 0, num1 = 0, num2 = 0;
+  var num1 = 0, num2 = 0, sum = 0;
+
+  final TextEditingController t1 = new TextEditingController(text: "0");
+  final TextEditingController t2 = new TextEditingController(text: "0");
+
+  void doAddition() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 + num2;
+    });
+  }
+
+  void doSub() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 - num2;
+    });
+  }
+
+  void doMul() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 * num2;
+    });
+  }
+
+  void doDiv() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 ~/ num2;
+    });
+  }
+
+  void doClear() {
+    setState(() {
+      t1.text = "0";
+      t2.text = "0";
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -76,7 +118,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    doAddition;
+                  },
                   child: Text(
                     "ADD",
                     style: TextStyle(color: Colors.white),
@@ -87,7 +131,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    doSub();
+                  },
                   child: Text(
                     "SUBTRACT",
                     style: TextStyle(color: Colors.white),
@@ -103,7 +149,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    doDiv();
+                  },
                   child: Text(
                     "DIVIDE",
                     style: TextStyle(color: Colors.white),
@@ -114,7 +162,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    doDiv();
+                  },
                   child: Text(
                     "MULTIPLY",
                     style: TextStyle(color: Colors.white),
@@ -127,7 +177,9 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                doClear();
+              },
               child: Text(
                 "CLEAR",
                 style: TextStyle(color: Colors.white),
