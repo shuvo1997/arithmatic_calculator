@@ -82,6 +82,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       t2.text = "0";
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -99,6 +100,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
+              controller: t1,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: "Enter number 1"),
@@ -107,6 +109,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
+              controller: t2,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: "Enter number 2"),
@@ -118,9 +121,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
-                  onPressed: () {
-                    doAddition;
-                  },
+                  onPressed: doAddition,
                   child: Text(
                     "ADD",
                     style: TextStyle(color: Colors.white),
@@ -163,7 +164,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
                   onPressed: () {
-                    doDiv();
+                    doMul();
                   },
                   child: Text(
                     "MULTIPLY",
