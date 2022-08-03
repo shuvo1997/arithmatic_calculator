@@ -3,7 +3,7 @@
 A simple calculator project.
 
 ## Project Demo
-![demo-img][img/img1.png]
+![demo-img](img/img1.png)
 
 ## Getting Started
 
