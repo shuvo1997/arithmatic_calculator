@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.purple,
           ),
           backgroundColor: Colors.white,
-          body: CalculatorHomePage()),
+          body: const CalculatorHomePage()),
     );
   }
 }
@@ -41,8 +40,8 @@ class CalculatorHomePage extends StatefulWidget {
 class _CalculatorHomePageState extends State<CalculatorHomePage> {
   var num1 = 0, num2 = 0, sum = 0;
 
-  final TextEditingController t1 = new TextEditingController(text: "0");
-  final TextEditingController t2 = new TextEditingController(text: "0");
+  final TextEditingController t1 = TextEditingController(text: "0");
+  final TextEditingController t2 = TextEditingController(text: "0");
 
   void doAddition() {
     setState(() {
@@ -92,26 +91,26 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         children: [
           Text(
             "Output: $sum",
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.purple),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: t1,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(), hintText: "Enter number 1"),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: t2,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(), hintText: "Enter number 2"),
             ),
           ),
@@ -119,27 +118,29 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
                   onPressed: doAddition,
-                  child: Text(
+                  color: Colors.purple,
+                  child: const Text(
                     "ADD",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.purple,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
                   onPressed: () {
                     doSub();
                   },
-                  child: Text(
+                  color: Colors.purple,
+                  child: const Text(
                     "SUBTRACT",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.purple,
                 ),
               ),
             ],
@@ -148,44 +149,46 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
                   onPressed: () {
                     doDiv();
                   },
-                  child: Text(
+                  color: Colors.purple,
+                  child: const Text(
                     "DIVIDE",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.purple,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: MaterialButton(
                   onPressed: () {
                     doMul();
                   },
-                  child: Text(
+                  color: Colors.purple,
+                  child: const Text(
                     "MULTIPLY",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.purple,
                 ),
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: MaterialButton(
               onPressed: () {
                 doClear();
               },
-              child: Text(
+              color: Colors.purple,
+              child: const Text(
                 "CLEAR",
                 style: TextStyle(color: Colors.white),
               ),
-              color: Colors.purple,
             ),
           ),
         ],
